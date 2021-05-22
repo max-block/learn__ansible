@@ -1,0 +1,7 @@
+- hosts: servers
+  tasks:
+    - name: add to fstab
+      lineinfile:
+        dest: /etc/fstab
+        regexp: "/swapfile"
+        line: "/swapfile swap swap defaults 0 0"
