@@ -1,0 +1,15 @@
+- hosts: servers
+  tasks:
+    - name: Add a repo key
+      apt_key: url=https://repos.influxdata.com/influxdb.key state=present
+
+    - name: Add the repo
+      apt_repository: repo="deb https://repos.influxdata.com/ubuntu focal stable" state="present"
+
+    - name: Install the apt package
+      apt: pkg=telegraf state=latest
+
+
+
+
+
